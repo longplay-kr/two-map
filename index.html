@@ -47,6 +47,26 @@
     white-space: nowrap;
   }
 
+  /* 편집 모드 - 드래그 가능 마커 커서 */
+  .edit-mode .label-city,
+  .edit-mode .label-landmark,
+  .edit-mode .label-station,
+  .edit-mode .label-river,
+  .edit-mode .label-road,
+  .edit-mode .label-park,
+  .edit-mode .label-direction {
+    cursor: grab;
+  }
+  .edit-mode .label-city:active,
+  .edit-mode .label-landmark:active,
+  .edit-mode .label-station:active,
+  .edit-mode .label-river:active,
+  .edit-mode .label-road:active,
+  .edit-mode .label-park:active,
+  .edit-mode .label-direction:active {
+    cursor: grabbing;
+  }
+
   .leaflet-tooltip.place-tooltip {
     background: rgba(0,0,0,0.8);
     border: 1px solid #555;
@@ -65,11 +85,59 @@
   #legend h3 { font-size: 13px; margin-bottom: 6px; color: #fff; }
   #legend span { margin-right: 8px; }
   .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+
+  #edit-btn {
+    position: fixed; top: 20px; right: 20px; z-index: 1000;
+    background: rgba(0,0,0,0.85); border: 1px solid #444;
+    border-radius: 6px; padding: 8px 16px;
+    color: #e5e5e5; font-size: 13px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  #edit-btn:hover { background: rgba(60,60,60,0.9); }
+  #edit-btn.active { border-color: #f59e0b; color: #f59e0b; }
+
+  #edit-panel {
+    display: none;
+    position: fixed; top: 60px; right: 20px; z-index: 1000;
+    background: rgba(0,0,0,0.9); border: 1px solid #f59e0b;
+    border-radius: 6px; padding: 12px 16px;
+    color: #e5e5e5; font-size: 12px; max-width: 320px;
+  }
+  #edit-panel .info { margin-bottom: 8px; line-height: 1.6; }
+  #edit-panel .info strong { color: #f59e0b; }
+  #edit-panel button {
+    background: #f59e0b; color: #000; border: none;
+    border-radius: 4px; padding: 6px 14px; cursor: pointer;
+    font-size: 12px; font-weight: bold; margin-right: 6px;
+  }
+  #edit-panel button:hover { background: #d97706; }
+  #edit-panel button.secondary {
+    background: #444; color: #e5e5e5;
+  }
+  #edit-panel button.secondary:hover { background: #555; }
+  #edit-panel pre {
+    background: #111; border: 1px solid #333; border-radius: 4px;
+    padding: 8px; margin-top: 8px; font-size: 11px;
+    max-height: 300px; overflow: auto; white-space: pre;
+    color: #aaa;
+  }
 </style>
 </head>
 <body>
 
 <div id="map"></div>
+
+<button id="edit-btn" onclick="toggleEditMode()">Edit Mode</button>
+
+<div id="edit-panel">
+  <div class="info" id="edit-info">
+    <strong>Edit Mode</strong><br>
+    Drag labels to move. Changes are tracked below.
+  </div>
+  <button onclick="exportJSON()">Export JSON</button>
+  <button class="secondary" onclick="copyJSON()">Copy</button>
+  <pre id="json-output" style="display:none"></pre>
+</div>
 
 <div id="legend">
   <h3>Sweet Home, Oregon</h3>
@@ -83,10 +151,15 @@
 </div>
 
 <script>
+let editMode = false;
+let placesData = null;
+let markers = [];
+let imgW, imgH;
+
 const img = new Image();
 img.onload = function () {
-  const w = img.naturalWidth;
-  const h = img.naturalHeight;
+  imgW = img.naturalWidth;
+  imgH = img.naturalHeight;
 
   const map = L.map('map', {
     crs: L.CRS.Simple,
@@ -97,17 +170,24 @@ img.onload = function () {
     attributionControl: false
   });
 
-  const bounds = [[0, 0], [h, w]];
+  const bounds = [[0, 0], [imgH, imgW]];
   L.imageOverlay('map.png', bounds).addTo(map);
-  map.fitBounds(bounds);
+  map.fitBounds(bounds, { animate: false });
+
+  // 초기 줌 레벨 기록 — minZoom 값을 이 기준으로 상대 계산
+  const baseZoom = map.getZoom();
 
   fetch('places.json')
     .then(r => r.json())
     .then(data => {
-      data.places.forEach(p => {
-        // places.json의 x, y는 퍼센트 (0-100) → 픽셀 좌표 변환
-        const lat = h - (p.y / 100) * h;  // y 반전 (이미지 좌표계)
-        const lng = (p.x / 100) * w;
+      placesData = data;
+      data.places.forEach((p, i) => {
+        const lat = imgH - (p.y / 100) * imgH;
+        const lng = (p.x / 100) * imgW;
+
+        // minZoom을 초기 줌 기준 상대값으로 변환
+        // -2, -1, 0 = 초기 뷰에서 표시, 1 = 1클릭 줌, 2 = 2클릭 줌
+        const effectiveMinZoom = baseZoom + Math.max(0, p.minZoom) * 0.5;
 
         const marker = L.marker([lat, lng], {
           icon: L.divIcon({
@@ -115,21 +195,32 @@ img.onload = function () {
             html: p.name,
             iconSize: null,
             iconAnchor: [0, 0]
-          })
-        }).addTo(map);
+          }),
+          draggable: false
+        });
 
-        // 줌 레벨에 따른 표시/숨기기
+        // 드래그 완료 시 좌표 업데이트
+        marker.on('dragend', function () {
+          const pos = marker.getLatLng();
+          const newX = Math.round((pos.lng / imgW) * 10000) / 100;
+          const newY = Math.round(((imgH - pos.lat) / imgH) * 10000) / 100;
+          p.x = newX;
+          p.y = newY;
+          updateEditInfo(p);
+        });
+
+        // 줌 레벨에 따라 마커를 맵에 추가/제거
         function updateVisibility() {
-          const currentZoom = map.getZoom();
-          const el = marker.getElement();
-          if (el) {
-            el.style.display = currentZoom >= p.minZoom ? '' : 'none';
+          if (map.getZoom() >= effectiveMinZoom) {
+            if (!map.hasLayer(marker)) marker.addTo(map);
+          } else {
+            if (map.hasLayer(marker)) marker.remove();
           }
         }
 
         map.on('zoomend', updateVisibility);
-        // 초기 상태
-        marker.on('add', () => setTimeout(updateVisibility, 0));
+        // 초기 표시
+        updateVisibility();
 
         if (p.description) {
           marker.bindTooltip(p.description, {
@@ -138,10 +229,57 @@ img.onload = function () {
             offset: [10, 0]
           });
         }
+
+        markers.push({ marker, place: p, index: i });
       });
     });
 };
 img.src = 'map.png';
+
+function toggleEditMode() {
+  editMode = !editMode;
+  const btn = document.getElementById('edit-btn');
+  const panel = document.getElementById('edit-panel');
+  const mapEl = document.getElementById('map');
+
+  btn.classList.toggle('active', editMode);
+  btn.textContent = editMode ? 'Exit Edit' : 'Edit Mode';
+  panel.style.display = editMode ? 'block' : 'none';
+
+  if (editMode) {
+    mapEl.classList.add('edit-mode');
+  } else {
+    mapEl.classList.remove('edit-mode');
+  }
+
+  markers.forEach(({ marker }) => {
+    if (editMode) {
+      marker.dragging.enable();
+    } else {
+      marker.dragging.disable();
+    }
+  });
+}
+
+function updateEditInfo(p) {
+  const info = document.getElementById('edit-info');
+  info.innerHTML = `<strong>Moved:</strong> ${p.name}<br>x: ${p.x}, y: ${p.y}`;
+}
+
+function exportJSON() {
+  const output = document.getElementById('json-output');
+  output.style.display = 'block';
+  output.textContent = JSON.stringify(placesData, null, 2);
+}
+
+function copyJSON() {
+  const json = JSON.stringify(placesData, null, 2);
+  navigator.clipboard.writeText(json).then(() => {
+    const btn = event.target;
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+  });
+}
 </script>
 
 </body>

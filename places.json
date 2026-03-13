@@ -4,263 +4,583 @@
       "name": "Sweet Home",
       "type": "city",
       "description": "Oregon, Linn County",
-      "x": 50,
-      "y": 55,
+      "x": 42.7,
+      "y": 47.54,
       "minZoom": -2
     },
     {
       "name": "Terminus",
       "type": "landmark",
       "description": "Albany & Eastern Railroad terminus",
-      "x": 72,
-      "y": 25,
+      "x": 89.94,
+      "y": 5.06,
       "minZoom": -1
     },
     {
       "name": "Holley Halt",
       "type": "station",
       "description": "Wayside halt",
-      "x": 72,
-      "y": 55,
+      "x": 69.14,
+      "y": 64.35,
       "minZoom": 0
     },
     {
       "name": "South Santiam River",
       "type": "river",
       "description": "Cascade Range headwaters",
-      "x": 20,
-      "y": 15,
+      "x": 13.61,
+      "y": 18.35,
       "minZoom": -1
     },
     {
       "name": "Ames Creek",
       "type": "river",
       "description": "Through Sankey Park",
-      "x": 35,
-      "y": 45,
+      "x": 36.45,
+      "y": 13.55,
       "minZoom": 0
     },
     {
       "name": "Wiley Creek",
       "type": "river",
       "description": "Into South Santiam River",
-      "x": 25,
-      "y": 60,
+      "x": 14.06,
+      "y": 57.81,
       "minZoom": 0
     },
     {
       "name": "U.S. Route 20",
       "type": "road",
-      "description": "Albany/Lebanon \u2194 Cascade Mountains",
-      "x": 50,
-      "y": 30,
+      "description": "Albany/Lebanon ↔ Cascade Mountains",
+      "x": 51.65,
+      "y": 32.46,
       "minZoom": -1
     },
     {
       "name": "OR-228",
       "type": "road",
-      "description": "Sweet Home \u2194 Halsey",
-      "x": 30,
-      "y": 25,
+      "description": "Sweet Home ↔ Halsey",
+      "x": 27.94,
+      "y": 27.59,
       "minZoom": 0
     },
     {
       "name": "Main Street",
       "type": "road",
       "description": "Downtown commercial",
-      "x": 45,
-      "y": 55,
+      "x": 43.07,
+      "y": 40.97,
       "minZoom": 0
     },
     {
       "name": "Long Street",
       "type": "road",
       "description": "East Linn Museum",
-      "x": 45,
-      "y": 58,
+      "x": 49.76,
+      "y": 56.15,
       "minZoom": 1
     },
     {
       "name": "Elm Street",
       "type": "road",
       "description": "",
-      "x": 42,
-      "y": 52,
+      "x": 40.65,
+      "y": 51.13,
       "minZoom": 1
     },
     {
       "name": "Ames Creek Road",
       "type": "road",
       "description": "Along Ames Creek",
-      "x": 30,
-      "y": 48,
+      "x": 30.71,
+      "y": 45.09,
       "minZoom": 1
     },
     {
       "name": "Wiley Creek Road",
       "type": "road",
       "description": "Along Wiley Creek",
-      "x": 22,
-      "y": 55,
+      "x": 22.44,
+      "y": 50.75,
       "minZoom": 1
     },
     {
       "name": "1st Avenue",
       "type": "road",
       "description": "Western end, near OR-228/US-20 junction",
-      "x": 30,
-      "y": 50,
+      "x": 28.81,
+      "y": 51.46,
       "minZoom": 1
     },
     {
       "name": "6th Avenue",
       "type": "road",
       "description": "Downtown core",
-      "x": 37,
-      "y": 53,
+      "x": 34.77,
+      "y": 54.13,
       "minZoom": 1
     },
     {
       "name": "12th Avenue",
       "type": "road",
       "description": "Schools area",
-      "x": 43,
-      "y": 54,
+      "x": 46.83,
+      "y": 54.2,
       "minZoom": 1
     },
     {
       "name": "18th Avenue",
       "type": "road",
       "description": "Commercial area",
-      "x": 50,
-      "y": 53,
+      "x": 52.44,
+      "y": 54.2,
       "minZoom": 1
     },
     {
       "name": "29th Avenue",
       "type": "road",
       "description": "Eastern residential",
-      "x": 58,
-      "y": 52,
+      "x": 51.86,
+      "y": 41.02,
       "minZoom": 1
     },
     {
       "name": "44th Avenue",
       "type": "road",
       "description": "Eastern outskirts, toward Foster Reservoir",
-      "x": 66,
-      "y": 50,
+      "x": 69.57,
+      "y": 53.43,
       "minZoom": 1
     },
     {
       "name": "A Street",
       "type": "road",
       "description": "North of Main, near river",
-      "x": 44,
-      "y": 48,
+      "x": 40.68,
+      "y": 47.24,
       "minZoom": 1
     },
     {
       "name": "Fir Street",
       "type": "road",
       "description": "South of Elm, residential",
-      "x": 44,
-      "y": 60,
+      "x": 37.96,
+      "y": 60.86,
       "minZoom": 1
     },
     {
       "name": "Cedar Street",
       "type": "road",
       "description": "Residential, tree-name grid",
-      "x": 46,
-      "y": 63,
+      "x": 49.91,
+      "y": 66.16,
       "minZoom": 1
     },
     {
       "name": "Kalmia Street",
       "type": "road",
       "description": "Southern residential",
-      "x": 43,
-      "y": 68,
+      "x": 38.06,
+      "y": 65.37,
       "minZoom": 1
     },
     {
       "name": "Tamarack Street",
       "type": "road",
       "description": "Southern residential",
-      "x": 45,
-      "y": 72,
+      "x": 43.23,
+      "y": 71.08,
       "minZoom": 1
     },
     {
       "name": "River Road",
       "type": "road",
       "description": "Along South Santiam River",
-      "x": 40,
-      "y": 22,
+      "x": 37.3,
+      "y": 22.95,
       "minZoom": 0
     },
     {
       "name": "Pleasant Valley Road",
       "type": "road",
       "description": "South toward Pleasant Valley",
-      "x": 55,
-      "y": 75,
+      "x": 62.9,
+      "y": 76.26,
       "minZoom": 1
     },
     {
       "name": "Holley Road",
       "type": "road",
       "description": "Southwest toward Holley",
-      "x": 25,
-      "y": 65,
+      "x": 23.78,
+      "y": 63.09,
       "minZoom": 1
     },
     {
       "name": "Airport Road",
       "type": "road",
       "description": "Sweet Home Municipal Airport",
-      "x": 60,
-      "y": 70,
+      "x": 60.35,
+      "y": 71.82,
       "minZoom": 1
     },
     {
       "name": "Clark Mill Road",
       "type": "road",
       "description": "Rural, south of town",
-      "x": 35,
-      "y": 72,
+      "x": 33.94,
+      "y": 73.38,
       "minZoom": 1
     },
     {
       "name": "Mountain View Road",
       "type": "road",
       "description": "Southern hills",
-      "x": 48,
-      "y": 78,
+      "x": 49.31,
+      "y": 76.06,
       "minZoom": 1
     },
     {
       "name": "Crawfordsville Drive",
       "type": "road",
       "description": "Northwest toward Crawfordsville",
-      "x": 18,
-      "y": 32,
+      "x": 17.58,
+      "y": 43.75,
       "minZoom": 1
     },
     {
       "name": "Green River Road",
       "type": "road",
       "description": "Southeast of town",
-      "x": 70,
-      "y": 60,
+      "x": 63.58,
+      "y": 60.99,
       "minZoom": 1
     },
     {
       "name": "Riggs Hill Road",
       "type": "road",
       "description": "Southern hills",
-      "x": 52,
+      "x": 57.73,
+      "y": 82.09,
+      "minZoom": 1
+    },
+    {
+      "name": "3rd Avenue",
+      "type": "road",
+      "description": "Western downtown",
+      "x": 31.61,
+      "y": 54.69,
+      "minZoom": 2
+    },
+    {
+      "name": "9th Avenue",
+      "type": "road",
+      "description": "Near City Hall",
+      "x": 40.75,
+      "y": 54.22,
+      "minZoom": 2
+    },
+    {
+      "name": "15th Avenue",
+      "type": "road",
+      "description": "Mid-town residential",
+      "x": 52.34,
+      "y": 49.24,
+      "minZoom": 2
+    },
+    {
+      "name": "24th Avenue",
+      "type": "road",
+      "description": "Eastern residential",
+      "x": 58.59,
+      "y": 54.2,
+      "minZoom": 2
+    },
+    {
+      "name": "35th Avenue",
+      "type": "road",
+      "description": "Far east, rural edge",
+      "x": 57.81,
+      "y": 41.06,
+      "minZoom": 2
+    },
+    {
+      "name": "50th Avenue",
+      "type": "road",
+      "description": "Near Foster Dam area",
+      "x": 72.45,
+      "y": 27.76,
+      "minZoom": 2
+    },
+    {
+      "name": "Park Street",
+      "type": "road",
+      "description": "North of Main, near Sankey Park",
+      "x": 34.1,
+      "y": 39.23,
+      "minZoom": 2
+    },
+    {
+      "name": "Birch Street",
+      "type": "road",
+      "description": "Residential, tree-name grid",
+      "x": 43.51,
+      "y": 56.13,
+      "minZoom": 2
+    },
+    {
+      "name": "Dogwood Street",
+      "type": "road",
+      "description": "Residential, tree-name grid",
+      "x": 43.29,
+      "y": 60.91,
+      "minZoom": 2
+    },
+    {
+      "name": "Juniper Street",
+      "type": "road",
+      "description": "Southern residential",
+      "x": 40.62,
+      "y": 68.22,
+      "minZoom": 2
+    },
+    {
+      "name": "Nandina Street",
+      "type": "road",
+      "description": "Southern residential",
+      "x": 37.89,
+      "y": 70.33,
+      "minZoom": 2
+    },
+    {
+      "name": "Poplar Street",
+      "type": "road",
+      "description": "Southern residential",
+      "x": 43.66,
+      "y": 66.23,
+      "minZoom": 2
+    },
+    {
+      "name": "Willow Street",
+      "type": "road",
+      "description": "Southernmost tree-name street",
+      "x": 43.75,
+      "y": 76.09,
+      "minZoom": 2
+    },
+    {
+      "name": "Grape Street",
+      "type": "road",
+      "description": "Residential",
+      "x": 55.77,
+      "y": 66.25,
+      "minZoom": 2
+    },
+    {
+      "name": "Jefferson Street",
+      "type": "road",
+      "description": "Residential",
+      "x": 52.23,
+      "y": 60.99,
+      "minZoom": 2
+    },
+    {
+      "name": "Northside Drive",
+      "type": "road",
+      "description": "North bank, along river",
+      "x": 45,
+      "y": 18,
+      "minZoom": 1
+    },
+    {
+      "name": "Brush Creek Road",
+      "type": "road",
+      "description": "South, follows Brush Creek",
+      "x": 38,
+      "y": 78,
+      "minZoom": 1
+    },
+    {
+      "name": "Fern Ridge Road",
+      "type": "road",
+      "description": "Rural, south of town",
+      "x": 27.73,
+      "y": 82.96,
+      "minZoom": 1
+    },
+    {
+      "name": "Whiskey Butte Road",
+      "type": "road",
+      "description": "Southeast hills",
+      "x": 65.9,
+      "y": 72.07,
+      "minZoom": 1
+    },
+    {
+      "name": "Rowell Hill Road",
+      "type": "road",
+      "description": "Southern hills",
+      "x": 42,
+      "y": 85,
+      "minZoom": 1
+    },
+    {
+      "name": "Foothills Drive",
+      "type": "road",
+      "description": "Southern residential hills",
+      "x": 49.68,
+      "y": 71.09,
+      "minZoom": 2
+    },
+    {
+      "name": "Skyline Drive",
+      "type": "road",
+      "description": "Hilltop residential",
+      "x": 47,
+      "y": 80,
+      "minZoom": 2
+    },
+    {
+      "name": "Santiam Terrace Road",
+      "type": "road",
+      "description": "North of town",
+      "x": 33.16,
+      "y": 27.56,
+      "minZoom": 1
+    },
+    {
+      "name": "Foster Dam Road",
+      "type": "road",
+      "description": "Access to Foster Dam",
+      "x": 16.16,
+      "y": 30.08,
+      "minZoom": 1
+    },
+    {
+      "name": "Quartzville Road",
+      "type": "road",
+      "description": "Northeast toward Green Peter Reservoir",
+      "x": 62.11,
+      "y": 10.74,
+      "minZoom": 0
+    },
+    {
+      "name": "Yellowbottom Road",
+      "type": "road",
+      "description": "Quartzville Creek corridor",
+      "x": 78.22,
+      "y": 23.14,
+      "minZoom": 1
+    },
+    {
+      "name": "Spur Road",
+      "type": "road",
+      "description": "Forest service road, east",
+      "x": 93.87,
+      "y": 16.09,
+      "minZoom": 1
+    },
+    {
+      "name": "Green Peter Road",
+      "type": "road",
+      "description": "Toward Green Peter Dam",
+      "x": 77.98,
+      "y": 18.31,
+      "minZoom": 1
+    },
+    {
+      "name": "Thistle Creek Road",
+      "type": "road",
+      "description": "Northeast, forest service",
+      "x": 92.29,
+      "y": 21.92,
+      "minZoom": 1
+    },
+    {
+      "name": "Santiam Highway",
+      "type": "road",
+      "description": "US-20 east toward Cascadia",
+      "x": 92.19,
+      "y": 27.88,
+      "minZoom": 0
+    },
+    {
+      "name": "Springer Road",
+      "type": "road",
+      "description": "Rural area",
+      "x": 65,
+      "y": 58,
+      "minZoom": 2
+    },
+    {
+      "name": "Berlin Road",
+      "type": "road",
+      "description": "Rural area",
+      "x": 78,
+      "y": 45,
+      "minZoom": 1
+    },
+    {
+      "name": "Marks Ridge Road",
+      "type": "road",
+      "description": "Eastern hills",
+      "x": 82,
+      "y": 62,
+      "minZoom": 1
+    },
+    {
+      "name": "Scott Mountain Road",
+      "type": "road",
+      "description": "Mountain road, east",
+      "x": 73.93,
+      "y": 38.48,
+      "minZoom": 1
+    },
+    {
+      "name": "Ridgeway Road",
+      "type": "road",
+      "description": "Southern area",
+      "x": 75,
+      "y": 70,
+      "minZoom": 1
+    },
+    {
+      "name": "Liberty Road",
+      "type": "road",
+      "description": "Rural area",
+      "x": 85,
+      "y": 50,
+      "minZoom": 1
+    },
+    {
+      "name": "Harmony Road",
+      "type": "road",
+      "description": "Rural area",
+      "x": 80.81,
+      "y": 32.86,
+      "minZoom": 1
+    },
+    {
+      "name": "N Butte Road",
+      "type": "road",
+      "description": "North of town",
+      "x": 60.64,
+      "y": 20.12,
+      "minZoom": 1
+    },
+    {
+      "name": "Greenville Road",
+      "type": "road",
+      "description": "Eastern rural",
+      "x": 88,
+      "y": 72,
+      "minZoom": 1
+    },
+    {
+      "name": "Rice Road",
+      "type": "road",
+      "description": "Rural area",
+      "x": 78,
       "y": 82,
       "minZoom": 1
     },
@@ -268,8 +588,8 @@
       "name": "Sankey Park",
       "type": "park",
       "description": "16.85 acres, Weddle Covered Bridge",
-      "x": 38,
-      "y": 42,
+      "x": 37.23,
+      "y": 39.49,
       "minZoom": 0
     },
     {
@@ -292,16 +612,16 @@
       "name": "Hobart Natural Area",
       "type": "park",
       "description": "60 acres, trails, wetlands",
-      "x": 15,
-      "y": 70,
+      "x": 13.72,
+      "y": 69.68,
       "minZoom": 0
     },
     {
       "name": "Foster Dam",
       "type": "landmark",
       "description": "126ft rock-fill dam",
-      "x": 10,
-      "y": 30,
+      "x": 6.26,
+      "y": 34.31,
       "minZoom": 0
     },
     {
@@ -316,12 +636,12 @@
       "name": "East Linn Museum",
       "type": "landmark",
       "description": "Pioneer artifacts since 1852",
-      "x": 48,
-      "y": 58,
+      "x": 48.55,
+      "y": 59.18,
       "minZoom": 1
     },
     {
-      "name": "\u2190 Lebanon (12mi)",
+      "name": "← Lebanon (12mi)",
       "type": "direction",
       "description": "Pop. ~19,000, railroad junction",
       "x": 2,
@@ -329,7 +649,7 @@
       "minZoom": -1
     },
     {
-      "name": "\u2190 Albany (35mi)",
+      "name": "← Albany (35mi)",
       "type": "direction",
       "description": "Linn County seat, pop. ~56,000",
       "x": 2,
@@ -337,7 +657,7 @@
       "minZoom": -1
     },
     {
-      "name": "Cascadia \u2192",
+      "name": "Cascadia →",
       "type": "direction",
       "description": "Cascadia State Park",
       "x": 98,
