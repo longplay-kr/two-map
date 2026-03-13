@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Home, Oregon - Terminus Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a1a; font-family: 'Segoe UI', sans-serif; }
+  #map { width: 100vw; height: 100vh; }
+
+  .label-city {
+    font-size: 18px; font-weight: bold; color: #fff;
+    text-shadow: 0 0 6px #000, 0 0 3px #000;
+    white-space: nowrap;
+  }
+  .label-landmark {
+    font-size: 14px; font-weight: bold; color: #f59e0b;
+    text-shadow: 0 0 4px #000, 0 0 2px #000;
+    white-space: nowrap;
+  }
+  .label-station {
+    font-size: 12px; font-weight: bold; color: #f87171;
+    text-shadow: 0 0 4px #000, 0 0 2px #000;
+    white-space: nowrap;
+  }
+  .label-river {
+    font-size: 13px; font-style: italic; color: #60a5fa;
+    text-shadow: 0 0 4px #000, 0 0 2px #000;
+    white-space: nowrap;
+  }
+  .label-road {
+    font-size: 11px; color: #d1d5db;
+    text-shadow: 0 0 3px #000, 0 0 2px #000;
+    white-space: nowrap;
+  }
+  .label-park {
+    font-size: 12px; color: #4ade80;
+    text-shadow: 0 0 4px #000, 0 0 2px #000;
+    white-space: nowrap;
+  }
+  .label-direction {
+    font-size: 12px; color: #a1a1aa;
+    text-shadow: 0 0 3px #000, 0 0 2px #000;
+    white-space: nowrap;
+  }
+
+  .leaflet-tooltip.place-tooltip {
+    background: rgba(0,0,0,0.8);
+    border: 1px solid #555;
+    color: #e5e5e5;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .leaflet-tooltip.place-tooltip::before { border-right-color: rgba(0,0,0,0.8); }
+
+  #legend {
+    position: fixed; bottom: 20px; left: 20px; z-index: 1000;
+    background: rgba(0,0,0,0.85); border: 1px solid #444;
+    border-radius: 6px; padding: 12px 16px;
+    color: #e5e5e5; font-size: 12px; line-height: 1.8;
+  }
+  #legend h3 { font-size: 13px; margin-bottom: 6px; color: #fff; }
+  #legend span { margin-right: 8px; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div id="legend">
+  <h3>Sweet Home, Oregon</h3>
+  <div><span class="dot" style="background:#fff"></span> City</div>
+  <div><span class="dot" style="background:#f59e0b"></span> Landmark / Terminus</div>
+  <div><span class="dot" style="background:#f87171"></span> Station</div>
+  <div><span class="dot" style="background:#60a5fa"></span> River / Creek</div>
+  <div><span class="dot" style="background:#d1d5db"></span> Road</div>
+  <div><span class="dot" style="background:#4ade80"></span> Park</div>
+  <div><span class="dot" style="background:#a1a1aa"></span> Direction</div>
+</div>
+
+<script>
+const img = new Image();
+img.onload = function () {
+  const w = img.naturalWidth;
+  const h = img.naturalHeight;
+
+  const map = L.map('map', {
+    crs: L.CRS.Simple,
+    minZoom: -2,
+    maxZoom: 3,
+    zoomSnap: 0.5,
+    zoomDelta: 0.5,
+    attributionControl: false
+  });
+
+  const bounds = [[0, 0], [h, w]];
+  L.imageOverlay('map.png', bounds).addTo(map);
+  map.fitBounds(bounds);
+
+  fetch('places.json')
+    .then(r => r.json())
+    .then(data => {
+      data.places.forEach(p => {
+        // places.json의 x, y는 퍼센트 (0-100) → 픽셀 좌표 변환
+        const lat = h - (p.y / 100) * h;  // y 반전 (이미지 좌표계)
+        const lng = (p.x / 100) * w;
+
+        const marker = L.marker([lat, lng], {
+          icon: L.divIcon({
+            className: 'label-' + p.type,
+            html: p.name,
+            iconSize: null,
+            iconAnchor: [0, 0]
+          })
+        }).addTo(map);
+
+        // 줌 레벨에 따른 표시/숨기기
+        function updateVisibility() {
+          const currentZoom = map.getZoom();
+          const el = marker.getElement();
+          if (el) {
+            el.style.display = currentZoom >= p.minZoom ? '' : 'none';
+          }
+        }
+
+        map.on('zoomend', updateVisibility);
+        // 초기 상태
+        marker.on('add', () => setTimeout(updateVisibility, 0));
+
+        if (p.description) {
+          marker.bindTooltip(p.description, {
+            className: 'place-tooltip',
+            direction: 'right',
+            offset: [10, 0]
+          });
+        }
+      });
+    });
+};
+img.src = 'map.png';
+</script>
+
+</body>
+</html>

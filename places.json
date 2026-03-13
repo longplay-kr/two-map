@@ -1,0 +1,348 @@
+{
+  "places": [
+    {
+      "name": "Sweet Home",
+      "type": "city",
+      "description": "Oregon, Linn County",
+      "x": 50,
+      "y": 55,
+      "minZoom": -2
+    },
+    {
+      "name": "Terminus",
+      "type": "landmark",
+      "description": "Albany & Eastern Railroad terminus",
+      "x": 72,
+      "y": 25,
+      "minZoom": -1
+    },
+    {
+      "name": "Holley Halt",
+      "type": "station",
+      "description": "Wayside halt",
+      "x": 72,
+      "y": 55,
+      "minZoom": 0
+    },
+    {
+      "name": "South Santiam River",
+      "type": "river",
+      "description": "Cascade Range headwaters",
+      "x": 20,
+      "y": 15,
+      "minZoom": -1
+    },
+    {
+      "name": "Ames Creek",
+      "type": "river",
+      "description": "Through Sankey Park",
+      "x": 35,
+      "y": 45,
+      "minZoom": 0
+    },
+    {
+      "name": "Wiley Creek",
+      "type": "river",
+      "description": "Into South Santiam River",
+      "x": 25,
+      "y": 60,
+      "minZoom": 0
+    },
+    {
+      "name": "U.S. Route 20",
+      "type": "road",
+      "description": "Albany/Lebanon \u2194 Cascade Mountains",
+      "x": 50,
+      "y": 30,
+      "minZoom": -1
+    },
+    {
+      "name": "OR-228",
+      "type": "road",
+      "description": "Sweet Home \u2194 Halsey",
+      "x": 30,
+      "y": 25,
+      "minZoom": 0
+    },
+    {
+      "name": "Main Street",
+      "type": "road",
+      "description": "Downtown commercial",
+      "x": 45,
+      "y": 55,
+      "minZoom": 0
+    },
+    {
+      "name": "Long Street",
+      "type": "road",
+      "description": "East Linn Museum",
+      "x": 45,
+      "y": 58,
+      "minZoom": 1
+    },
+    {
+      "name": "Elm Street",
+      "type": "road",
+      "description": "",
+      "x": 42,
+      "y": 52,
+      "minZoom": 1
+    },
+    {
+      "name": "Ames Creek Road",
+      "type": "road",
+      "description": "Along Ames Creek",
+      "x": 30,
+      "y": 48,
+      "minZoom": 1
+    },
+    {
+      "name": "Wiley Creek Road",
+      "type": "road",
+      "description": "Along Wiley Creek",
+      "x": 22,
+      "y": 55,
+      "minZoom": 1
+    },
+    {
+      "name": "1st Avenue",
+      "type": "road",
+      "description": "Western end, near OR-228/US-20 junction",
+      "x": 30,
+      "y": 50,
+      "minZoom": 1
+    },
+    {
+      "name": "6th Avenue",
+      "type": "road",
+      "description": "Downtown core",
+      "x": 37,
+      "y": 53,
+      "minZoom": 1
+    },
+    {
+      "name": "12th Avenue",
+      "type": "road",
+      "description": "Schools area",
+      "x": 43,
+      "y": 54,
+      "minZoom": 1
+    },
+    {
+      "name": "18th Avenue",
+      "type": "road",
+      "description": "Commercial area",
+      "x": 50,
+      "y": 53,
+      "minZoom": 1
+    },
+    {
+      "name": "29th Avenue",
+      "type": "road",
+      "description": "Eastern residential",
+      "x": 58,
+      "y": 52,
+      "minZoom": 1
+    },
+    {
+      "name": "44th Avenue",
+      "type": "road",
+      "description": "Eastern outskirts, toward Foster Reservoir",
+      "x": 66,
+      "y": 50,
+      "minZoom": 1
+    },
+    {
+      "name": "A Street",
+      "type": "road",
+      "description": "North of Main, near river",
+      "x": 44,
+      "y": 48,
+      "minZoom": 1
+    },
+    {
+      "name": "Fir Street",
+      "type": "road",
+      "description": "South of Elm, residential",
+      "x": 44,
+      "y": 60,
+      "minZoom": 1
+    },
+    {
+      "name": "Cedar Street",
+      "type": "road",
+      "description": "Residential, tree-name grid",
+      "x": 46,
+      "y": 63,
+      "minZoom": 1
+    },
+    {
+      "name": "Kalmia Street",
+      "type": "road",
+      "description": "Southern residential",
+      "x": 43,
+      "y": 68,
+      "minZoom": 1
+    },
+    {
+      "name": "Tamarack Street",
+      "type": "road",
+      "description": "Southern residential",
+      "x": 45,
+      "y": 72,
+      "minZoom": 1
+    },
+    {
+      "name": "River Road",
+      "type": "road",
+      "description": "Along South Santiam River",
+      "x": 40,
+      "y": 22,
+      "minZoom": 0
+    },
+    {
+      "name": "Pleasant Valley Road",
+      "type": "road",
+      "description": "South toward Pleasant Valley",
+      "x": 55,
+      "y": 75,
+      "minZoom": 1
+    },
+    {
+      "name": "Holley Road",
+      "type": "road",
+      "description": "Southwest toward Holley",
+      "x": 25,
+      "y": 65,
+      "minZoom": 1
+    },
+    {
+      "name": "Airport Road",
+      "type": "road",
+      "description": "Sweet Home Municipal Airport",
+      "x": 60,
+      "y": 70,
+      "minZoom": 1
+    },
+    {
+      "name": "Clark Mill Road",
+      "type": "road",
+      "description": "Rural, south of town",
+      "x": 35,
+      "y": 72,
+      "minZoom": 1
+    },
+    {
+      "name": "Mountain View Road",
+      "type": "road",
+      "description": "Southern hills",
+      "x": 48,
+      "y": 78,
+      "minZoom": 1
+    },
+    {
+      "name": "Crawfordsville Drive",
+      "type": "road",
+      "description": "Northwest toward Crawfordsville",
+      "x": 18,
+      "y": 32,
+      "minZoom": 1
+    },
+    {
+      "name": "Green River Road",
+      "type": "road",
+      "description": "Southeast of town",
+      "x": 70,
+      "y": 60,
+      "minZoom": 1
+    },
+    {
+      "name": "Riggs Hill Road",
+      "type": "road",
+      "description": "Southern hills",
+      "x": 52,
+      "y": 82,
+      "minZoom": 1
+    },
+    {
+      "name": "Sankey Park",
+      "type": "park",
+      "description": "16.85 acres, Weddle Covered Bridge",
+      "x": 38,
+      "y": 42,
+      "minZoom": 0
+    },
+    {
+      "name": "Northside Park",
+      "type": "park",
+      "description": "River access, swimming, fishing",
+      "x": 50,
+      "y": 20,
+      "minZoom": 0
+    },
+    {
+      "name": "Quarry Park",
+      "type": "park",
+      "description": "Wetlands, wildlife, trails",
+      "x": 60,
+      "y": 65,
+      "minZoom": 0
+    },
+    {
+      "name": "Hobart Natural Area",
+      "type": "park",
+      "description": "60 acres, trails, wetlands",
+      "x": 15,
+      "y": 70,
+      "minZoom": 0
+    },
+    {
+      "name": "Foster Dam",
+      "type": "landmark",
+      "description": "126ft rock-fill dam",
+      "x": 10,
+      "y": 30,
+      "minZoom": 0
+    },
+    {
+      "name": "Weddle Covered Bridge",
+      "type": "landmark",
+      "description": "In Sankey Park, over Ames Creek (1937)",
+      "x": 37,
+      "y": 44,
+      "minZoom": 1
+    },
+    {
+      "name": "East Linn Museum",
+      "type": "landmark",
+      "description": "Pioneer artifacts since 1852",
+      "x": 48,
+      "y": 58,
+      "minZoom": 1
+    },
+    {
+      "name": "\u2190 Lebanon (12mi)",
+      "type": "direction",
+      "description": "Pop. ~19,000, railroad junction",
+      "x": 2,
+      "y": 50,
+      "minZoom": -1
+    },
+    {
+      "name": "\u2190 Albany (35mi)",
+      "type": "direction",
+      "description": "Linn County seat, pop. ~56,000",
+      "x": 2,
+      "y": 55,
+      "minZoom": -1
+    },
+    {
+      "name": "Cascadia \u2192",
+      "type": "direction",
+      "description": "Cascadia State Park",
+      "x": 98,
+      "y": 50,
+      "minZoom": -1
+    }
+  ]
+}
